@@ -1,5 +1,91 @@
 # @backstage/backend-defaults
 
+## 0.5.0-next.0
+
+### Minor Changes
+
+- 359fcd7: **BREAKING**: The backwards compatibility with plugins using legacy auth through the token manager service has been removed. This means that instead of falling back to using the old token manager, requests towards plugins that don't support the new auth system will simply fail. Please make sure that all plugins in your deployment are hosted within a backend instance from the new backend system.
+- d425fc4: **BREAKING**: The return values from `createBackendPlugin`, `createBackendModule`, and `createServiceFactory` are now simply `BackendFeature` and `ServiceFactory`, instead of the previously deprecated form of a function that returns them. For this reason, `createServiceFactory` also no longer accepts the callback form where you provide direct options to the service. This also affects all `coreServices.*` service refs.
+
+  This may in particular affect tests; if you were effectively doing `createBackendModule({...})()` (note the parentheses), you can now remove those extra parentheses at the end. You may encounter cases of this in your `packages/backend/src/index.ts` too, where you add plugins, modules, and services. If you were using `createServiceFactory` with a function as its argument for the purpose of passing in options, this pattern has been deprecated for a while and is no longer supported. You may want to explore the new multiton patterns to achieve your goals, or moving settings to app-config.
+
+  As part of this change, the `IdentityFactoryOptions` type was removed, and can no longer be used to tweak that service. The identity service was also deprecated some time ago, and you will want to [migrate to the new auth system](https://backstage.io/docs/tutorials/auth-service-migration) if you still rely on it.
+
+- 19ff127: **BREAKING**: The default backend instance no longer provides implementations for the identity and token manager services, which have been removed from `@backstage/backend-plugin-api`.
+
+  If you rely on plugins that still require these services, you can add them to your own backend by re-creating the service reference and factory.
+
+  The following can be used to implement the identity service:
+
+  ```ts
+  import {
+    coreServices,
+    createServiceFactory,
+    createServiceRef,
+  } from '@backstage/backend-plugin-api';
+  import {
+    DefaultIdentityClient,
+    IdentityApi,
+  } from '@backstage/plugin-auth-node';
+
+  backend.add(
+    createServiceFactory({
+      service: createServiceRef<IdentityApi>({ id: 'core.identity' }),
+      deps: {
+        discovery: coreServices.discovery,
+      },
+      async factory({ discovery }) {
+        return DefaultIdentityClient.create({ discovery });
+      },
+    }),
+  );
+  ```
+
+  The following can be used to implement the token manager service:
+
+  ```ts
+  import { ServerTokenManager, TokenManager } from '@backstage/backend-common';
+  import { createBackend } from '@backstage/backend-defaults';
+  import {
+    coreServices,
+    createServiceFactory,
+    createServiceRef,
+  } from '@backstage/backend-plugin-api';
+
+  backend.add(
+    createServiceFactory({
+      service: createServiceRef<TokenManager>({ id: 'core.tokenManager' }),
+      deps: {
+        config: coreServices.rootConfig,
+        logger: coreServices.rootLogger,
+      },
+      createRootContext({ config, logger }) {
+        return ServerTokenManager.fromConfig(config, {
+          logger,
+          allowDisabledTokenManager: true,
+        });
+      },
+      async factory(_deps, tokenManager) {
+        return tokenManager;
+      },
+    }),
+  );
+  ```
+
+### Patch Changes
+
+- 7f779c7: `auth.externalAccess` should be optional in the config schema
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/backend-app-api@0.10.0-next.0
+  - @backstage/plugin-permission-node@0.8.2-next.0
+  - @backstage/backend-common@0.25.0-next.0
+  - @backstage/plugin-events-node@0.4.0-next.0
+  - @backstage/plugin-auth-node@0.5.1-next.0
+  - @backstage/config-loader@1.9.0
+  - @backstage/config@1.2.0
+  - @backstage/integration-aws-node@0.1.12
+
 ## 0.4.2
 
 ### Patch Changes

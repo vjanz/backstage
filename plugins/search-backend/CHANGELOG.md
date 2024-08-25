@@ -1,5 +1,20 @@
 # @backstage/plugin-search-backend
 
+## 1.5.16-next.0
+
+### Patch Changes
+
+- 5726390: Deprecate create router as the legacy backend system will no longer be supported.
+- d425fc4: Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/backend-defaults@0.5.0-next.0
+  - @backstage/plugin-permission-node@0.8.2-next.0
+  - @backstage/backend-common@0.25.0-next.0
+  - @backstage/backend-openapi-utils@0.1.17-next.0
+  - @backstage/plugin-search-backend-node@1.3.1-next.0
+  - @backstage/config@1.2.0
+
 ## 1.5.15
 
 ### Patch Changes

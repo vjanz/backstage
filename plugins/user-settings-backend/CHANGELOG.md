@@ -1,5 +1,18 @@
 # @backstage/plugin-user-settings-backend
 
+## 0.2.23-next.0
+
+### Patch Changes
+
+- d425fc4: Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- 1b98099: Replaced usage of the deprecated identity service with the new HTTP auth service for the new backend system.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/backend-common@0.25.0-next.0
+  - @backstage/plugin-auth-node@0.5.1-next.0
+  - @backstage/plugin-signals-node@0.1.10-next.0
+  - @backstage/config@1.2.0
+
 ## 0.2.22
 
 ### Patch Changes

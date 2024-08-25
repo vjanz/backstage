@@ -1,5 +1,20 @@
 # @backstage/plugin-catalog-backend
 
+## 1.25.1-next.0
+
+### Patch Changes
+
+- d425fc4: Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/plugin-search-backend-module-catalog@0.2.1-next.0
+  - @backstage/plugin-permission-node@0.8.2-next.0
+  - @backstage/backend-common@0.25.0-next.0
+  - @backstage/plugin-events-node@0.4.0-next.0
+  - @backstage/backend-openapi-utils@0.1.17-next.0
+  - @backstage/plugin-catalog-node@1.12.6-next.0
+  - @backstage/config@1.2.0
+
 ## 1.25.0
 
 ### Minor Changes

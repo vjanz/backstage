@@ -1,5 +1,17 @@
 # @backstage/plugin-catalog-backend-module-aws
 
+## 0.4.1-next.0
+
+### Patch Changes
+
+- d425fc4: Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/backend-defaults@0.5.0-next.0
+  - @backstage/plugin-catalog-node@1.12.6-next.0
+  - @backstage/config@1.2.0
+  - @backstage/integration-aws-node@0.1.12
+
 ## 0.4.0
 
 ### Minor Changes

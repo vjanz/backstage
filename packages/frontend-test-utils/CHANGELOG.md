@@ -1,5 +1,20 @@
 # @backstage/frontend-test-utils
 
+## 0.2.0-next.0
+
+### Minor Changes
+
+- 5446061: Removed support for testing "v1" extensions, where outputs are defined as an object rather than an array.
+
+### Patch Changes
+
+- 4a66456: Internal update to add support for passing an `ApiRegistry` when creating the node tree
+- Updated dependencies
+  - @backstage/frontend-plugin-api@0.8.0-next.0
+  - @backstage/frontend-app-api@0.9.0-next.0
+  - @backstage/test-utils@1.6.0-next.0
+  - @backstage/config@1.2.0
+
 ## 0.1.12
 
 ### Patch Changes

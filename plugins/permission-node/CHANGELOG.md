@@ -1,5 +1,16 @@
 # @backstage/plugin-permission-node
 
+## 0.8.2-next.0
+
+### Patch Changes
+
+- 19ff127: Internal refactor to remove dependencies on the identity and token manager services, which have been removed. Public APIs no longer require the identity service or token manager to be provided.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/backend-common@0.25.0-next.0
+  - @backstage/plugin-auth-node@0.5.1-next.0
+  - @backstage/config@1.2.0
+
 ## 0.8.1
 
 ### Patch Changes

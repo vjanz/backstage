@@ -1,5 +1,18 @@
 # @backstage/plugin-app-backend
 
+## 0.3.73-next.0
+
+### Patch Changes
+
+- d425fc4: Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/backend-common@0.25.0-next.0
+  - @backstage/plugin-app-node@0.1.24-next.0
+  - @backstage/plugin-auth-node@0.5.1-next.0
+  - @backstage/config-loader@1.9.0
+  - @backstage/config@1.2.0
+
 ## 0.3.72
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @backstage/plugin-catalog
 
+## 1.22.1-next.0
+
+### Patch Changes
+
+- 5446061: The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
+- 180a45f: Entity presentation api now only fetches fields that are required to display entity title
+- Updated dependencies
+  - @backstage/frontend-plugin-api@0.8.0-next.0
+  - @backstage/plugin-search-react@1.8.0-next.0
+  - @backstage/plugin-catalog-react@1.12.4-next.0
+  - @backstage/core-compat-api@0.2.9-next.0
+  - @backstage/core-components@0.14.10
+  - @backstage/core-plugin-api@1.9.3
+  - @backstage/integration-react@1.1.30
+  - @backstage/plugin-permission-react@0.4.25
+
 ## 1.22.0
 
 ### Minor Changes

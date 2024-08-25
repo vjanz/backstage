@@ -1,5 +1,17 @@
 # @backstage/plugin-devtools
 
+## 0.1.18-next.0
+
+### Patch Changes
+
+- 019d9ad: Minor dockerfile syntax update
+- Updated dependencies
+  - @backstage/frontend-plugin-api@0.8.0-next.0
+  - @backstage/core-compat-api@0.2.9-next.0
+  - @backstage/core-components@0.14.10
+  - @backstage/core-plugin-api@1.9.3
+  - @backstage/plugin-permission-react@0.4.25
+
 ## 0.1.17
 
 ### Patch Changes

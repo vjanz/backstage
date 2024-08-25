@@ -1,5 +1,19 @@
 # @backstage/test-utils
 
+## 1.6.0-next.0
+
+### Minor Changes
+
+- d47be30: Added the icons option to the renderInTestApp function's TestAppOptions to be forwarded to the icons option of `createApp`.
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/config@1.2.0
+  - @backstage/core-app-api@1.14.2
+  - @backstage/core-plugin-api@1.9.3
+  - @backstage/plugin-permission-react@0.4.25
+
 ## 1.5.10
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @backstage/plugin-catalog-backend-module-msgraph
 
+## 0.6.1-next.0
+
+### Patch Changes
+
+- d425fc4: Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.9.0-next.0
+  - @backstage/plugin-catalog-node@1.12.6-next.0
+  - @backstage/config@1.2.0
+
 ## 0.6.0
 
 ### Minor Changes

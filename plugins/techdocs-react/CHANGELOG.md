@@ -1,5 +1,15 @@
 # @backstage/plugin-techdocs-react
 
+## 1.2.8-next.0
+
+### Patch Changes
+
+- 5ee3d27: Fixed issue in useShadowRootElements which could lead to unlimited render loops
+- Updated dependencies
+  - @backstage/config@1.2.0
+  - @backstage/core-components@0.14.10
+  - @backstage/core-plugin-api@1.9.3
+
 ## 1.2.7
 
 ### Patch Changes
